@@ -39,3 +39,8 @@ mat-dialog-container{
     color:grey;
     margin:2px;
 }
+.container {
+    display: block;
+    flex-grow: 1;
+    margin-top:100px;
+}

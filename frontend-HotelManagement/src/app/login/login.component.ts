@@ -27,33 +27,34 @@ export class LoginComponent {
   });
 
   proceedlogin() {
-    this.email = this.loginform.value.email;
-    this.password = this.loginform.value.password;
-    console.log(this.email);
-    this.service.getUser(this.email,this.password).subscribe((res)=>{
-      console.log(res);
-
-      if(!res){
-        alert('Wrong Credentials');
-
-        
-      }
-      else{
-        if(this.loginform.valid && this.loginform.value.email=='admin@gmail.com'){
-          this.router.navigate(['/admin']);
+    try {
+      this.email = this.loginform.value.email;
+      this.password = this.loginform.value.password;
+      console.log(this.email);
+  
+      this.service.getUser(this.email, this.password).subscribe((res) => {
+        console.log(res);
+  
+        if (!res) {
+          alert('Wrong Credentials');
+        } else {
+          if (this.loginform.valid && this.loginform.value.email == 'admin@gmail.com') {
+            this.router.navigate(['/admin']);
           }
-          if(this.loginform.valid && this.loginform.value.email!='admin@gmail.com'){
-          this.router.navigate(['/home']);
+          if (this.loginform.valid && this.loginform.value.email != 'admin@gmail.com') {
+            this.router.navigate(['/home']);
           }
           Swal.fire(
             'Logged in successfully',
             'Thank you!',
             'success'
           )
-      }  
-
-    })
-    
-
+        }
+      });
+    } catch (error) {
+      console.error('Error occurred:', error);
+      // Handle error as per your application's requirement
+    }
   }
+  
 }

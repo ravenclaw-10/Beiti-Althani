@@ -37,11 +37,14 @@ import com.google.inject.Singleton;
 import ninja.jpa.JpaModule;
 import ninja.migrations.MigrationClassicModule;
 import ninja.utils.NinjaProperties;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Singleton
 public class Module extends AbstractModule {
     
     private final NinjaProperties ninjaProperties;
+    private static final Logger log = LoggerFactory.getLogger(Module.class);
     
     public Module(NinjaProperties ninjaProperties) {
         this.ninjaProperties = ninjaProperties;

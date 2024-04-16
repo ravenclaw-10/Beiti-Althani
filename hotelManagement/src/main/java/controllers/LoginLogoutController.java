@@ -40,6 +40,8 @@ import ninja.session.Session;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import dao.UserDao;
 
@@ -49,6 +51,7 @@ public class LoginLogoutController {
     @Inject
     UserDao userDao;
     
+    private static final Logger log = LoggerFactory.getLogger(LoginLogoutController.class);
     
     ///////////////////////////////////////////////////////////////////////////
     // Login
@@ -63,7 +66,7 @@ public class LoginLogoutController {
                             @Param("password") String password,
                             @Param("rememberMe") Boolean rememberMe,
                             Context context) {
-
+        log.debug("loginpoost called");
         boolean isUserNameAndPasswordValid = userDao.isUserAndPasswordValid(username, password);
 
         if (isUserNameAndPasswordValid) {

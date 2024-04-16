@@ -26,6 +26,7 @@ import { HoteladminComponent } from './hoteladmin/hoteladmin.component';
 import { AddhotelComponent } from './hoteladmin/addhotel/addhotel.component';
 import { EdithotelComponent } from './hoteladmin/edithotel/edithotel.component';
 import { ConfirmComponent } from './confirm/confirm.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
@@ -47,7 +48,9 @@ import { ConfirmComponent } from './confirm/confirm.component';
     AddhotelComponent,
     EdithotelComponent,
     AboutComponent,
-    ConfirmComponent
+    ConfirmComponent,
+    NavbarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +60,7 @@ import { ConfirmComponent } from './confirm/confirm.component';
     ReactiveFormsModule,
     RouterModule.forRoot([
       {path:"", component: LoginComponent},
-      {path:"home", component: AppComponent},
+      {path:"home", component: HomeComponent},
       {path:"register", component: RegisterComponent},
       {path:"login", component: LoginComponent},
       {path: 'booking', component: BookingComponent},

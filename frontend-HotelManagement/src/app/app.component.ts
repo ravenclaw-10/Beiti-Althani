@@ -3,6 +3,7 @@ import {FormGroup, FormControl,FormsModule, ReactiveFormsModule, Validators, For
 import { Router } from '@angular/router';
 import { AuthService } from './service/auth.service';
 import Swal from 'sweetalert2';
+import { BookingComponent } from './booking/booking.component';
 
 @Component({
   selector: 'app-root',
@@ -20,16 +21,16 @@ export class AppComponent implements DoCheck {
     }
   }
   isadmin=false;
-  isMenuVisible=false;
+  // isMenuVisible=false;
   
   ngDoCheck(): void {
     let currentroute = this.router.url;
     let role=sessionStorage.getItem('role');
-    if (currentroute == '/' || currentroute == '/register' || currentroute == '/admin' || currentroute =='/bookingadmin' || currentroute =='/staffadmin' || currentroute =='/hoteladmin') {
-      this.isMenuVisible = false
-    } else {
-      this.isMenuVisible = true
-    }
+    // if (currentroute == '/' || currentroute == '/register' || currentroute == '/admin' || currentroute =='/bookingadmin' || currentroute =='/staffadmin' || currentroute =='/hoteladmin') {
+    //   this.isMenuVisible = false
+    // } else {
+    //   this.isMenuVisible = true
+    // }
 
     if (role == 'admin') {
       this.isadmin = true;

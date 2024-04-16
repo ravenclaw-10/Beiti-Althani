@@ -77,6 +77,24 @@ public class Routes implements ApplicationRoutes {
         router.OPTIONS().route("/.*").with(CorsHeaderController::allowCors);
         router.OPTIONS().route("/").with(CorsHeaderController::allowCors);
         router.OPTIONS().route("/*").with(CorsHeaderController::allowCors);
+
+
+        // router.OPTIONS().route("/booking/{email}").with(CorsHeaderController::allowCors);
+        // router.OPTIONS().route("/booking/{id}").with(CorsHeaderController::allowCors);
+        // router.OPTIONS().route("/staff").with(CorsHeaderController::allowCors);
+        // router.OPTIONS().route("/staff/{id}").with(CorsHeaderController::allowCors);
+        // router.OPTIONS().route("/userCount").with(CorsHeaderController::allowCors);
+        // router.OPTIONS().route("/hotels").with(CorsHeaderController::allowCors);
+        // router.OPTIONS().route("/hotels/{id}").with(CorsHeaderController::allowCors);
+        // router.OPTIONS().route("/rooms").with(CorsHeaderController::allowCors);
+        // router.OPTIONS().route("/rooms/{id}").with(CorsHeaderController::allowCors);
+        // router.OPTIONS().route("/user").with(CorsHeaderController::allowCors);
+        // router.OPTIONS().route("/users").with(CorsHeaderController::allowCors);
+        // router.OPTIONS().route("/user/{id}").with(CorsHeaderController::allowCors);
+        // router.OPTIONS().route("/user/{email}").with(CorsHeaderController::allowCors);
+        // router.OPTIONS().route("/user/{email}/{password}").with(CorsHeaderController::allowCors);
+        // router.OPTIONS().route("/login").with(CorsHeaderController::allowCors);
+        // router.OPTIONS().route("/logout").with(CorsHeaderController::allowCors);
         
         router.GET().route("/").with(ApplicationController::index);
         
